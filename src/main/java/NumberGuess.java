@@ -35,8 +35,6 @@ public class NumberGuess {
                     String answer = userInput.next();
                     switch (answer) {
                         case "yes" -> {
-                            guessCount = 0;
-                            target = generateRandomNumber();
                             break playAgainPrompt;
                         }
                         case "no" -> {
@@ -48,6 +46,9 @@ public class NumberGuess {
                     }
 
                 }
+                guessCount = 0;
+                target = generateRandomNumber();
+                continue;
             }
 
             if (Math.abs(guess - target) == 1) {
