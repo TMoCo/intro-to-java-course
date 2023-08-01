@@ -1,8 +1,10 @@
-public class Author {
+package uk.co.bbc.tmoco.bookshop.domain;
+
+public class Publisher {
     private Address address;
     private String name;
 
-    public Author(String name, Address address) {
+    public Publisher(String name, Address address) {
         this.name = name;
         this.address = address;
     }
@@ -25,6 +27,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return String.format("Author[name='%s' address=%s]", name, address);
+        return String.format("uk.co.bbc.tmoco.bookshop.domain.Publisher[name='%s' address=%s]", name, address);
     }
 }
+

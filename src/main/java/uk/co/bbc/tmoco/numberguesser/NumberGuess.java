@@ -1,3 +1,5 @@
+package uk.co.bbc.tmoco.numberguesser;
+
 import java.util.Scanner;
 
 public class NumberGuess {

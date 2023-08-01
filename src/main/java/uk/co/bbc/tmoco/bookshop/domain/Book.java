@@ -1,3 +1,5 @@
+package uk.co.bbc.tmoco.bookshop.domain;
+
 public class Book {
     private String title;
     private double price;
@@ -60,7 +62,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("Book[title='%s', author=%s, publisher=%s, " +
+        return String.format("uk.co.bbc.tmoco.bookshop.domain.Book[title='%s', author=%s, publisher=%s, " +
                         "price=%,.2f", title, author, publisher, price);
     }
 }

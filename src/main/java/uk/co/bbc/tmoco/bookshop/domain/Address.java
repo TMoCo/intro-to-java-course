@@ -1,3 +1,5 @@
+package uk.co.bbc.tmoco.bookshop.domain;
+
 public class Address {
     private int number;
     private String street, city, county, postcode;
@@ -52,7 +54,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return String.format("Address[number=%d, street='%s', city='%s', " +
+        return String.format("uk.co.bbc.tmoco.bookshop.domain.Address[number=%d, street='%s', city='%s', " +
                 "county='%s', postcode='%s']", number, street, city, county,
                 postcode);
     }
