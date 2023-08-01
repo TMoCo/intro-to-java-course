@@ -1,10 +1,10 @@
-package uk.co.bbc.tmoco.bookshop.domain;
+package uk.co.bbc.tmoco.bookshop.domain.contact;
 
-public class Publisher {
-    private Address address;
-    private String name;
+public class Contact {
+    protected Address address;
+    protected String name;
 
-    public Publisher(String name, Address address) {
+    protected Contact(String name, Address address) {
         this.name = name;
         this.address = address;
     }
@@ -27,7 +27,6 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return String.format("uk.co.bbc.tmoco.bookshop.domain.Publisher[name='%s' address=%s]", name, address);
+        return String.format("Contact[name='%s', address=%s]", name, address);
     }
 }
-
