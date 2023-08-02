@@ -4,6 +4,8 @@ import uk.co.bbc.tmoco.bookshop.domain.contact.Address;
 import uk.co.bbc.tmoco.bookshop.domain.contact.Author;
 import uk.co.bbc.tmoco.bookshop.domain.contact.Publisher;
 import uk.co.bbc.tmoco.bookshop.domain.product.Book;
+import uk.co.bbc.tmoco.bookshop.domain.product.Sales;
+import uk.co.bbc.tmoco.bookshop.domain.store.Store;
 
 public class Bookshop {
     public static void main(String[] args) {
@@ -22,22 +24,40 @@ public class Bookshop {
                 new Publisher("Tech Books Publishing Ltd.",
                         publisherAddress);
         System.out.println("Publisher: " + publisher);
-        Book book = new Book("Java Unleashed",
+        Book book1 = new Book("Java Unleashed",
                 author, publisher, 15.95);
-        System.out.println("Book: " + book);
-        System.out.println("Calculating the Sales Discount price");
-        book.setSaleDiscount(10.0);
+        System.out.println("Book: " + book1);
+        System.out.println("\nCalculating the Sales Discount price");
+        book1.setSaleDiscount(10.0);
         System.out.println("Sale price of book: " +
-                book.calculateSalePrice());
+                book1.calculateSalePrice());
+        Book book2 = new Book("Java For Professionals", author, publisher,
+                12.55);
+        System.out.println("\nBook2: " + book2);
 
-        Author author1 = new Author("Pete Smith",
-                authorAddress,
-                "Technical");
+        System.out.println("Book Instance Count: " + Book.getInstanceCount());
 
-        Publisher publisher1 = new Publisher("Bill Smith",
-                publisherAddress, "Tech Books Publishing Ltd.");
 
-        System.out.println(publisher1.toString());
-        System.out.println(author1.toString());
+        Store store = new Store(new Book[]{book1, book2});
+
+        for (Book book : store.getBooks()) {
+            System.out.println("Book: " + book);
+        }
+
+        if (!store.isEmpty()) {
+            Book book = store.get(0);
+            book.setSaleDiscount(10.0);
+            System.out.println("Sale price of book: " +
+                    book1.calculateSalePrice());
+            book.getAuthor().prettyPrint();
+            book.getPublisher().prettyPrint();
+        }
+
+        if (store.size() > 1) {
+            Sales salesProduct = store.get(1);
+            salesProduct.setSaleDiscount(10.0);
+            System.out.println("Sale price of book: " +
+                    salesProduct.calculateSalePrice());
+        }
     }
 }

@@ -1,6 +1,6 @@
 package uk.co.bbc.tmoco.bookshop.domain.contact;
 
-public class Author extends Contact {
+public final class Author extends Contact {
     private String genre;
 
     public Author(String name, Address address, String genre) {
@@ -10,6 +10,12 @@ public class Author extends Contact {
 
     public Author(String name, Address address) {
         this(name, address, "");
+    }
+
+    @Override
+    public void prettyPrint() {
+        System.out.println(String.format("Hello I am %s. I write %s books.",
+                this.name, this.genre));
     }
 
     public String getGenre() {

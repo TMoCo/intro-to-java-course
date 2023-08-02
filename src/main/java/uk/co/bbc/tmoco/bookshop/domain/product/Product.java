@@ -1,16 +1,12 @@
 package uk.co.bbc.tmoco.bookshop.domain.product;
 
-public class Product {
+public sealed abstract class Product implements Sales permits Book {
     protected String title;
     protected double price;
 
-    private double saleDiscount;
+    protected double saleDiscount;
 
-    protected Product(String title, double price) {
-        this.title = title;
-        this.price = price;
-        this.saleDiscount = 0.0f;
-    }
+    public abstract void print();
 
     public double calculateSalePrice() {
         return price * (1 - saleDiscount / 100.f);

@@ -1,10 +1,13 @@
 package uk.co.bbc.tmoco.bookshop.domain.contact;
 
-public class Contact {
+import uk.co.bbc.tmoco.bookshop.utils.PrettyPrinter;
+
+public sealed abstract class Contact implements PrettyPrinter permits Author,
+        Publisher {
     protected Address address;
     protected String name;
 
-    protected Contact(String name, Address address) {
+    public Contact(String name, Address address) {
         this.name = name;
         this.address = address;
     }

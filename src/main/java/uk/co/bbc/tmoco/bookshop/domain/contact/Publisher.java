@@ -1,6 +1,6 @@
 package uk.co.bbc.tmoco.bookshop.domain.contact;
 
-public class Publisher extends Contact {
+public final class Publisher extends Contact {
 
     private String organisation;
 
@@ -19,6 +19,12 @@ public class Publisher extends Contact {
 
     public Publisher(String name, Address address) {
         this(name, address, "");
+    }
+
+    @Override
+    public void prettyPrint() {
+        System.out.println(String.format("Hello I am the publisher %s.",
+               this.name));
     }
 
     @Override
